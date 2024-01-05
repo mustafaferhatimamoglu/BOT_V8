@@ -1,0 +1,7 @@
+try
+    sqlcreate
+catch
+    delete last one (if exist)
+
+get time from table
+fill table

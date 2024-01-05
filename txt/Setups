@@ -1,0 +1,7 @@
+pip install binance-connector
+pip install binance-futures-connector
+
+pip install pymssql
+
+pip install seaborn
+
