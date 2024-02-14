@@ -7,31 +7,8 @@ CreateKline.CreateTable_KlineData('BTCUSDT', '1h')
 CreateKline.CreateTable_KlineData('BTCUSDT', '1m')
 
 #   df['bb_hi'] = df['bb_hi'] - df['close']
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns; sns.set()
 
-sql_Query = """
-select 
-(Kline_close_time+1)/1000 as 'Timestamp'
-,dateadd(S, (Kline_close_time+1)/1000, '1970-01-01') as 'Date_Timestamp'
-,Open_price as 'Open'
-,High_price as 'High'
-,Low_price as 'Low'
-,Close_price as 'Close'
-,Volume as 'Volume'
-from BTCUSDT_1m
-order by Kline_open_time
-OFFSET 2200000 ROWS
-"""
 
-records = Database.SQL_Select(sql_Query)
-df = pd.DataFrame(records)
-print(df.head())
-df = df.apply(pd.to_numeric, downcast='float')
-print(df.head())
-df['Date_Timestamp'] = df['Timestamp'] - df['Timestamp']
-print(df.head())
 
 # import pandas as pd
 # import matplotlib.pyplot as plt

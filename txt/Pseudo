@@ -5,3 +5,13 @@ catch
 
 get time from table
 fill table
+
+
+
+//---------------------------------------------
+// get indicators
+
+get 100row/hourly
+ for
+    delete last
+    get [i][]
